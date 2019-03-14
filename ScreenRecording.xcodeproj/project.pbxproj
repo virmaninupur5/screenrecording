@@ -15,6 +15,8 @@
 		8325A62D223A25B200C8BE01 /* RecordScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325A62C223A25B200C8BE01 /* RecordScreenVC.swift */; };
 		8325A630223A25FC00C8BE01 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325A62F223A25FC00C8BE01 /* GalleryVC.swift */; };
 		8325A634223A3C6A00C8BE01 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325A633223A3C6A00C8BE01 /* GalleryCollectionViewCell.swift */; };
+		8325A63A223A420100C8BE01 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325A636223A420100C8BE01 /* FileUtil.swift */; };
+		8325A63C223A420100C8BE01 /* ScreenRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325A638223A420100C8BE01 /* ScreenRecorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		8325A62C223A25B200C8BE01 /* RecordScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordScreenVC.swift; sourceTree = "<group>"; };
 		8325A62F223A25FC00C8BE01 /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
 		8325A633223A3C6A00C8BE01 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		8325A636223A420100C8BE01 /* FileUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
+		8325A638223A420100C8BE01 /* ScreenRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRecorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		8325A619223A24DB00C8BE01 /* ScreenRecording */ = {
 			isa = PBXGroup;
 			children = (
+				8325A635223A41EF00C8BE01 /* Source */,
 				8325A631223A3C4400C8BE01 /* Views */,
 				8325A61A223A24DB00C8BE01 /* AppDelegate.swift */,
 				8325A61C223A24DB00C8BE01 /* ViewController.swift */,
@@ -95,6 +100,15 @@
 				8325A633223A3C6A00C8BE01 /* GalleryCollectionViewCell.swift */,
 			);
 			path = ViewCell;
+			sourceTree = "<group>";
+		};
+		8325A635223A41EF00C8BE01 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8325A636223A420100C8BE01 /* FileUtil.swift */,
+				8325A638223A420100C8BE01 /* ScreenRecorder.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,7 +185,9 @@
 				8325A62D223A25B200C8BE01 /* RecordScreenVC.swift in Sources */,
 				8325A634223A3C6A00C8BE01 /* GalleryCollectionViewCell.swift in Sources */,
 				8325A61D223A24DB00C8BE01 /* ViewController.swift in Sources */,
+				8325A63A223A420100C8BE01 /* FileUtil.swift in Sources */,
 				8325A61B223A24DB00C8BE01 /* AppDelegate.swift in Sources */,
+				8325A63C223A420100C8BE01 /* ScreenRecorder.swift in Sources */,
 				8325A630223A25FC00C8BE01 /* GalleryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

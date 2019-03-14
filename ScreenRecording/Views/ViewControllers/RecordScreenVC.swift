@@ -9,6 +9,7 @@
 
 import UIKit
 import ReplayKit
+import AVKit
 
 class RecordVC: UIViewController, RPPreviewViewControllerDelegate  {
     
@@ -17,9 +18,10 @@ class RecordVC: UIViewController, RPPreviewViewControllerDelegate  {
    @IBOutlet var colorPicker: UISegmentedControl!
    @IBOutlet var colorDisplay: UIView!
    
-   let recorder = RPScreenRecorder.shared()
+   //let recorder = RPScreenRecorder.shared()
+   
+   let screenRecorder = ScreenRecorder()
   
-    
    override func viewDidLoad() {
         super.viewDidLoad()
         recordButton.layer.cornerRadius = 32.5
@@ -62,12 +64,12 @@ class RecordVC: UIViewController, RPPreviewViewControllerDelegate  {
     }
     
     @IBAction func recordButtonTapped() {
-        guard recorder.isAvailable else {
+        guard RPScreenRecorder.shared().isAvailable else {
             print("Recording is not available at this time.")
             return
         }
         
-        if recorder.isRecording {
+        if RPScreenRecorder.shared().isRecording {
             stopRecording()
         }
         else {
@@ -78,7 +80,7 @@ class RecordVC: UIViewController, RPPreviewViewControllerDelegate  {
     
     
     func startRecording() {
-        recorder.startRecording{ (error) in
+        /*recorder.startRecording{ (error) in
             guard error == nil else {
                 print("There was an error starting the recording.")
                 return
@@ -90,6 +92,24 @@ class RecordVC: UIViewController, RPPreviewViewControllerDelegate  {
                 self.statusLabel?.text = "Recording..."
                 self.statusLabel?.textColor = UIColor.red
              }
+        }*/
+        
+        
+        let randomNumber = arc4random_uniform(9999);
+        screenRecorder.startRecording(withFileName: "coolScreenRecording\(randomNumber)") {
+            (error) in
+            guard error == nil else {
+                print("There was an error starting the recording.")
+                return
+            }
+            
+            print("Started Recording Successfully")
+            DispatchQueue.main.async {
+                self.recordButton?.backgroundColor = UIColor.red
+                self.statusLabel?.text = "Recording..."
+                self.statusLabel?.textColor = UIColor.red
+            }
+            //print(error!);
             
         }
         
@@ -97,7 +117,7 @@ class RecordVC: UIViewController, RPPreviewViewControllerDelegate  {
     
     func stopRecording() {
         
-        recorder.stopRecording { [unowned self] (preview, error) in
+        /*RPScreenRecorder.shared().stopRecording { [unowned self] (preview, error) in
             print("Stopped recording")
             
             guard preview != nil else {
@@ -109,7 +129,7 @@ class RecordVC: UIViewController, RPPreviewViewControllerDelegate  {
             
             let saveAction = UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction) in
                 preview?.previewControllerDelegate = self
-                preview?.userActivity?.activityType =
+                //preview?.userActivity?.activityType =
                 self.present(preview!, animated: true, completion: nil)
             })
             
@@ -120,15 +140,40 @@ class RecordVC: UIViewController, RPPreviewViewControllerDelegate  {
             alert.addAction(saveAction)
             alert.addAction(cancelAction)
             self.present(alert, animated: true, completion: nil)
-            
-           
-            
             self.viewReset()
+            
+        }*/
+        
+        
+        screenRecorder.stopRecording { (error) in
+            
+            guard error == nil else {
+                print("There was an error while recording.")
+                return
+            }
+            
+            let alert = UIAlertController(title: "Recording Finished", message: "Would you like to save your recording?", preferredStyle: .alert)
+            
+            let saveAction = UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction) in
+                
+            })
+            
+            let cancelAction = UIAlertAction(title: "No", style: .destructive, handler: { (action: UIAlertAction) -> Void in
+                
+            })
+            
+            alert.addAction(saveAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+            self.viewReset()
+            
             
         }
         
+        
     }
     
+    /*
     func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
         dismiss(animated: true)
     }
@@ -136,9 +181,7 @@ class RecordVC: UIViewController, RPPreviewViewControllerDelegate  {
     func previewController(_ previewController: RPPreviewViewController, didFinishWithActivityTypes activityTypes: Set<String>) {
         
        print(activityTypes.description)
-        
-        
-        
-    }
+    }*/
+    
 }
 

@@ -12,6 +12,9 @@
 		8325A620223A24DB00C8BE01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8325A61E223A24DB00C8BE01 /* Main.storyboard */; };
 		8325A622223A24E000C8BE01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8325A621223A24E000C8BE01 /* Assets.xcassets */; };
 		8325A625223A24E000C8BE01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8325A623223A24E000C8BE01 /* LaunchScreen.storyboard */; };
+		8325A62D223A25B200C8BE01 /* RecordScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325A62C223A25B200C8BE01 /* RecordScreenVC.swift */; };
+		8325A630223A25FC00C8BE01 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325A62F223A25FC00C8BE01 /* GalleryVC.swift */; };
+		8325A634223A3C6A00C8BE01 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325A633223A3C6A00C8BE01 /* GalleryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		8325A621223A24E000C8BE01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8325A624223A24E000C8BE01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8325A626223A24E000C8BE01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8325A62C223A25B200C8BE01 /* RecordScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordScreenVC.swift; sourceTree = "<group>"; };
+		8325A62F223A25FC00C8BE01 /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
+		8325A633223A3C6A00C8BE01 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		8325A619223A24DB00C8BE01 /* ScreenRecording */ = {
 			isa = PBXGroup;
 			children = (
+				8325A631223A3C4400C8BE01 /* Views */,
 				8325A61A223A24DB00C8BE01 /* AppDelegate.swift */,
 				8325A61C223A24DB00C8BE01 /* ViewController.swift */,
 				8325A61E223A24DB00C8BE01 /* Main.storyboard */,
@@ -62,6 +69,32 @@
 				8325A626223A24E000C8BE01 /* Info.plist */,
 			);
 			path = ScreenRecording;
+			sourceTree = "<group>";
+		};
+		8325A62E223A25B900C8BE01 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8325A62C223A25B200C8BE01 /* RecordScreenVC.swift */,
+				8325A62F223A25FC00C8BE01 /* GalleryVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8325A631223A3C4400C8BE01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8325A632223A3C5200C8BE01 /* ViewCell */,
+				8325A62E223A25B900C8BE01 /* ViewControllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8325A632223A3C5200C8BE01 /* ViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8325A633223A3C6A00C8BE01 /* GalleryCollectionViewCell.swift */,
+			);
+			path = ViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8325A62D223A25B200C8BE01 /* RecordScreenVC.swift in Sources */,
+				8325A634223A3C6A00C8BE01 /* GalleryCollectionViewCell.swift in Sources */,
 				8325A61D223A24DB00C8BE01 /* ViewController.swift in Sources */,
 				8325A61B223A24DB00C8BE01 /* AppDelegate.swift in Sources */,
+				8325A630223A25FC00C8BE01 /* GalleryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +319,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JMCLV9UFR5;
+				DEVELOPMENT_TEAM = YHVX5EEA4D;
 				INFOPLIST_FILE = ScreenRecording/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -292,7 +328,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.challenge.Challenge.ScreenRecording;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -301,7 +337,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JMCLV9UFR5;
+				DEVELOPMENT_TEAM = YHVX5EEA4D;
 				INFOPLIST_FILE = ScreenRecording/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -310,7 +346,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.challenge.Challenge.ScreenRecording;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

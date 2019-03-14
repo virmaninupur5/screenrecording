@@ -13,7 +13,7 @@ import UIKit
 class GalleryVC: UIViewController {
     
     @IBOutlet weak var galleryCollectionView: UICollectionView!
-    private let gallery = [String]()
+    private var gallery = [URL]()
     private let reuseIdentifier = "GalleryCell"
     
     override func viewDidLoad() {
@@ -21,6 +21,10 @@ class GalleryVC: UIViewController {
         
         self.title = "Album"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTapped));
+        
+        self.gallery = ReplayFileUtil.fetchAllReplays();
+        
+        print(ReplayFileUtil.fetchAllReplays());
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -34,14 +38,18 @@ extension GalleryVC: UICollectionViewDataSource, UICollectionViewDelegate {
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 1; //gallery.count;
+        return gallery.count;
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView
-            .dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,for:indexPath) as! GalleryCollectionViewCell
         cell.backgroundColor = .black
+        DispatchQueue.main.async {
+            cell.setView(url: self.gallery[indexPath.row]);
+        }
+        
         // Configure the cell
         return cell
     }

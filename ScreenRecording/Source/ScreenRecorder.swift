@@ -72,6 +72,7 @@ class ScreenRecorder
         }
     }
     
+    
     func stopRecording(handler: @escaping (Error?) -> Void)
     {
         if #available(iOS 11.0, *)

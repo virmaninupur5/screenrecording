@@ -152,22 +152,14 @@ class RecordVC: UIViewController, RPPreviewViewControllerDelegate  {
                 return
             }
             
-            let alert = UIAlertController(title: "Recording Finished", message: "Would you like to save your recording?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Recording Finished", message: "Recording successfully saved", preferredStyle: .alert)
             
-            let saveAction = UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction) in
-                
-            })
-            
-            let cancelAction = UIAlertAction(title: "No", style: .destructive, handler: { (action: UIAlertAction) -> Void in
-                
+            let saveAction = UIAlertAction(title: "Thanks", style: .default, handler: { (action: UIAlertAction) in
+                self.viewReset()
             })
             
             alert.addAction(saveAction)
-            alert.addAction(cancelAction)
             self.present(alert, animated: true, completion: nil)
-            self.viewReset()
-            
-            
         }
         
         

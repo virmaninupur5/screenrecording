@@ -113,7 +113,26 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="87" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vek-OE-XLG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="87" height="84"/>
+                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <wkWebViewConfiguration key="configuration">
+                                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                        <wkPreferences key="preferences"/>
+                                                    </wkWebViewConfiguration>
+                                                </wkWebView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vek-OE-XLG" secondAttribute="trailing" id="128-Vy-Vgj"/>
+                                            <constraint firstAttribute="bottom" secondItem="vek-OE-XLG" secondAttribute="bottom" id="5AH-6d-6ON"/>
+                                            <constraint firstItem="vek-OE-XLG" firstAttribute="top" secondItem="Vpp-E5-fS0" secondAttribute="top" id="KpA-06-7ih"/>
+                                            <constraint firstItem="vek-OE-XLG" firstAttribute="leading" secondItem="Vpp-E5-fS0" secondAttribute="leading" id="d9g-nN-Rpq"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="webView" destination="vek-OE-XLG" id="lMS-8V-7jR"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
